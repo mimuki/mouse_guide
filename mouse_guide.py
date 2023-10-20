@@ -96,8 +96,10 @@ def parse_cardinal(direction: str, distance: int) -> Tuple[bool, int]:
         modifier, direction = direction.split(' ', 1)
         if modifier == 'minor':
             distance *= 5
-        if modifier == 'major':
+        else:
             distance *= 25
+    else:
+        distance *= 25
     if direction == 'left':
         return True, x - distance
     elif direction == 'right':
